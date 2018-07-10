@@ -12,8 +12,9 @@
   		<input id="firstForm" type="text"><br>
   		<div id="container"></div>
   		<p>Or Leave it up to the gods:</p>
+  		<div id="alsocontainer"></div>
 		<button id="rando"> Randomize me!</button>
-		<div id="alsocontainer"></div>
+		<button id="reset">Reset!</div>
 	</div>
 <script type="text/javascript">
 let firstNames = ["", "Kar", "Jax", "Cay", "Ky", "Pai", "Fox", "Tin", "Har", "Cy", "Hen", "Ever", "Hay", "Ava", "Peigh", "Ry", "Cae", "Bri", "Mad", "Ken", "Grayce", "Ice", "Anni", "Brax", "Tenna", "Gray", "Fin", "Jay", "Oak", "Ryk", "Pray", "Kim", "Bear", "Bronx", "Khy", "River", "Bren", "Kal", "Ty", "Lok", "Ar", "Fyn", "Xan", "Mai", "Ella", "Jer", "Kin", "Ada", "Had", "Bent", "Ayn", "Kace", "Hux", "Hol", "Scout", "Bar", "Wild", "Dash", "Col", "Kai", "Ember", "Lan", "At", "Hunt", "Kash", "Zae", "Sky", "Lyn", "Pax", "Bex", "Mar", "Brook", "Waver", "El", "Wren", "Ay", "Kor", "Kyn", "Gun", "Liv", "Bray", "Mia", "Ander", "Jae", "Zai", "Kym", "Jaz", "Emer", "Scot", "Mak", "Or", "Tyn", "Jai", "Ark", "Nash", "Em", "Wolf", "Knox", "Xy", "Lake", "Kay"];
@@ -32,10 +33,6 @@ firstForm.addEventListener('keydown', function (e) {
 			newName.textContent = (`Your baby's name is ${firstNames[first] + lastNames[second]} !`);
 			newName.setAttribute('style', 'padding: 20px');
 			firstContainer.appendChild(newName);
-			const reset = document.createElement('button');
-			reset.textContent = "Reset";
-			reset.addEventListener('click', ()=> window.location.reload());
-			firstContainer.appendChild(reset);
 		} nameGen(first, second);
 	 } 
 	 
@@ -49,11 +46,11 @@ function trueRand(){
 	randContent.textContent = (`Your baby's name is ${firstNames[partOne] + lastNames[partTwo]} !`);
 	randContent.setAttribute('style', 'padding: 20px');
 	secondContainer.appendChild(randContent);
-	const reset = document.createElement('button');
-	reset.textContent = "Reset";
-	reset.addEventListener('click', ()=> window.location.reload());
-	secondContainer.appendChild(reset);
+
 }
+const reset = document.querySelector('#reset');
+reset.addEventListener('click', ()=> window.location.reload());
+	
 const randomize = document.querySelector('#rando');
 randomize.addEventListener('click', () => trueRand());
 
