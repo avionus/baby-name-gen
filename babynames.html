@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Baby Name Generator</title>
+	<link rel="stylesheet" type="text/css" href="babyname.css">
+	<link href="https://fonts.googleapis.com/css?family=Coming+Soon|Gamja+Flower" rel="stylesheet">
 </head>
 <body>
+	<h1> Beautiful Baby Name Generator</h1>
+	<div class=wrapper>
+  		<p>Enter two numbers between 1 and 100, seperated by a space</p>
+  		<input id="firstForm" type="text"><br>
+  		<div id="container"></div>
+  		<p>Or Leave it up to the gods:</p>
+		<button id="rando"> Randomize me!</button>
+		<div id="alsocontainer"></div>
+	</div>
 <script type="text/javascript">
 let firstNames = ["", "Kar", "Jax", "Cay", "Ky", "Pai", "Fox", "Tin", "Har", "Cy", "Hen", "Ever", "Hay", "Ava", "Peigh", "Ry", "Cae", "Bri", "Mad", "Ken", "Grayce", "Ice", "Anni", "Brax", "Tenna", "Gray", "Fin", "Jay", "Oak", "Ryk", "Pray", "Kim", "Bear", "Bronx", "Khy", "River", "Bren", "Kal", "Ty", "Lok", "Ar", "Fyn", "Xan", "Mai", "Ella", "Jer", "Kin", "Ada", "Had", "Bent", "Ayn", "Kace", "Hux", "Hol", "Scout", "Bar", "Wild", "Dash", "Col", "Kai", "Ember", "Lan", "At", "Hunt", "Kash", "Zae", "Sky", "Lyn", "Pax", "Bex", "Mar", "Brook", "Waver", "El", "Wren", "Ay", "Kor", "Kyn", "Gun", "Liv", "Bray", "Mia", "Ander", "Jae", "Zai", "Kym", "Jaz", "Emer", "Scot", "Mak", "Or", "Tyn", "Jai", "Ark", "Nash", "Em", "Wolf", "Knox", "Xy", "Lake", "Kay"];
 let lastNames = ["", "lee", "xton", "leigh", "lyn", "ux", "dan", "son", "xon", "erly", "err", "ley", "gan", "zlee", "sen", "lynn", "den", "sper", "yn", "dee", "lo", "ker", "syn", "erleigh", "ber", "lea", "via", "man", "kon", "kynn", "di", " Lou", "ella", "der", "lor", "ington", "xxon", "ser", "ryn", "iel", "ron", "rie", "ston", "cyn", "de", "ver", "la", "vander", "nix", "lyse", "wyn", "see", "way", "is", "dry", "ro", "cer", "ory", "rayne", "al", "bry", "ali", "kee", "ling", "low", "styn", "dlee", "dox", "bree", "ora", "dell", "lina", "zer", "von", "beth", "cin", "anna", "row", "ter", "alee", "zten", "ayah", "sun", "zah", "dynn", "zer", "tlee", "zynne", "nar", "ameigh", "lea", "ryk", "thor", " Rae", "zin", "land", "ler", "bella", "tynne", "ier"];
+const firstContainer = document.querySelector('#container');
+const secondContainer = document.querySelector('#alsocontainer');
+//asks the user to input two numbers seperated by a space. the space is there so when i convert the value to a string, i can split it with a space using the split function. then i can get the values of the array without worrying about any jankyness in the array itself (it'll take two and three digit numbers without a problem). next i call the function with a reset button added once the function is called so the name can go away if the user wants to pick another number or two. the function itself only concats two random strings from the above arrays, with the empty strings in there so the user can start from 1 and not 0.
+firstForm.addEventListener('keydown', function (e) {
+	 if (e.keyCode === 13){
+	 	let submission = (firstForm.value).toString();
+	 	let numbers = submission.split(" ");
+	 	let first = numbers[0];
+	 	let second = numbers[1];
+	 	function nameGen(first, second) {
+			const newName = document.createElement('div');
+			newName.textContent = (`Your baby's name is ${firstNames[first] + lastNames[second]}!`);
+			firstContainer.appendChild(newName);
+			const reset = document.createElement('button');
+			reset.textContent = "Reset";
+			reset.addEventListener('click', ()=> window.location.reload());
+			firstContainer.appendChild(reset);
+		} nameGen(first, second);
+	 } 
+	 
+});
 
-
-let first = prompt("Pick a number between 1 and 100");
-let last = prompt("Pick another number between 1 and 100");
-function nameGen(first, last) {
-	alert(`Your baby's name is ${firstNames[first] + lastNames[last]}!`);
-}
-
-
-nameGen(first, last);
-
+//this function is pretty simple; it does the same thing as the above function except it maps it to a button so the user doesn't have to choose numbers. totally random, totally up to the gods. 
 function trueRand(){
 	let partOne = Math.floor(Math.random() * 100);
 	let partTwo = Math.floor(Math.random() * 100);
-	console.log(`Your baby's name is ${firstNames[partOne] + lastNames[partTwo]}!`);
+	const randContent = document.createElement('div');
+	randContent.textContent = (`Your baby's name is ${firstNames[partOne] + lastNames[partTwo]}!`);
+	secondContainer.appendChild(randContent);
+	const reset = document.createElement('button');
+	reset.textContent = "Reset";
+	reset.addEventListener('click', ()=> window.location.reload());
+	secondContainer.appendChild(reset);
 }
-
-trueRand();
+const randomize = document.querySelector('#rando');
+randomize.addEventListener('click', () => trueRand());
 
 </script>
 </body>
