@@ -1,0 +1,1 @@
+A quick n simple project inspired by me waisting time on a group on FB. Shout out to Taelor S. for compiling all 200 prefixes and suffixes. She is a true conniseur of nonesense baby names. 
