@@ -29,7 +29,7 @@ firstForm.addEventListener('keydown', function (e) {
 	 	let second = numbers[1];
 	 	function nameGen(first, second) {
 			const newName = document.createElement('div');
-			newName.textContent = (`Your baby's name is ${firstNames[first] + lastNames[second]}!`);
+			newName.textContent = (`Your baby's name is ${firstNames[first] + lastNames[second]} !`);
 			firstContainer.appendChild(newName);
 			const reset = document.createElement('button');
 			reset.textContent = "Reset";
@@ -45,7 +45,7 @@ function trueRand(){
 	let partOne = Math.floor(Math.random() * 100);
 	let partTwo = Math.floor(Math.random() * 100);
 	const randContent = document.createElement('div');
-	randContent.textContent = (`Your baby's name is ${firstNames[partOne] + lastNames[partTwo]}!`);
+	randContent.textContent = (`Your baby's name is ${firstNames[partOne] + lastNames[partTwo]} !`);
 	secondContainer.appendChild(randContent);
 	const reset = document.createElement('button');
 	reset.textContent = "Reset";
