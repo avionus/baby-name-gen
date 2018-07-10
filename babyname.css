@@ -2,7 +2,7 @@ body{
 	background: linear-gradient(#99ccff, #ffe6ff) no-repeat;
 }
 .wrapper {
-	font-family: 'Coming Soon', cursive;
+	font-family: 'Neucha', cursive;
 	font-size: 25px;
 	margin: 50px 260px 260px 260px;
 	padding: 15px;
@@ -12,15 +12,15 @@ body{
 	box-shadow: 5px 10px 10px rgba(0, 0, 0, 30%);
 }
 div {
-	font-family: 'Coming Soon', cursive;
+	font-family: 'Neucha', cursive;
 	font-size: 20px;
 }
 button {
-	font-family: 'Coming Soon', cursive;
+	font-family: 'Neucha', cursive;
 	font-size: 15px;
 }
 h1{
-	font-family: 'Coming Soon', cursive;
+	font-family: 'Neucha', cursive;
 	padding-top: 20px;
 	text-align: center;
 }
