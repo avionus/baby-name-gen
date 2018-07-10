@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+let firstNames = ["", "Kar", "Jax", "Cay", "Ky", "Pai", "Fox", "Tin", "Har", "Cy", "Hen", "Ever", "Hay", "Ava", "Peigh", "Ry", "Cae", "Bri", "Mad", "Ken", "Grayce", "Ice", "Anni", "Brax", "Tenna", "Gray", "Fin", "Jay", "Oak", "Ryk", "Pray", "Kim", "Bear", "Bronx", "Khy", "River", "Bren", "Kal", "Ty", "Lok", "Ar", "Fyn", "Xan", "Mai", "Ella", "Jer", "Kin", "Ada", "Had", "Bent", "Ayn", "Kace", "Hux", "Hol", "Scout", "Bar", "Wild", "Dash", "Col", "Kai", "Ember", "Lan", "At", "Hunt", "Kash", "Zae", "Sky", "Lyn", "Pax", "Bex", "Mar", "Brook", "Waver", "El", "Wren", "Ay", "Kor", "Kyn", "Gun", "Liv", "Bray", "Mia", "Ander", "Jae", "Zai", "Kym", "Jaz", "Emer", "Scot", "Mak", "Or", "Tyn", "Jai", "Ark", "Nash", "Em", "Wolf", "Knox", "Xy", "Lake", "Kay"];
+let lastNames = ["", "lee", "xton", "leigh", "lyn", "ux", "dan", "son", "xon", "erly", "err", "ley", "gan", "zlee", "sen", "lynn", "den", "sper", "yn", "dee", "lo", "ker", "syn", "erleigh", "ber", "lea", "via", "man", "kon", "kynn", "di", " Lou", "ella", "der", "lor", "ington", "xxon", "ser", "ryn", "iel", "ron", "rie", "ston", "cyn", "de", "ver", "la", "vander", "nix", "lyse", "wyn", "see", "way", "is", "dry", "ro", "cer", "ory", "rayne", "al", "bry", "ali", "kee", "ling", "low", "styn", "dlee", "dox", "bree", "ora", "dell", "lina", "zer", "von", "beth", "cin", "anna", "row", "ter", "alee", "zten", "ayah", "sun", "zah", "dynn", "zer", "tlee", "zynne", "nar", "ameigh", "lea", "ryk", "thor", " Rae", "zin", "land", "ler", "bella", "tynne", "ier"];
+
+
+let first = prompt("Pick a number between 1 and 100");
+let last = prompt("Pick another number between 1 and 100");
+function nameGen(first, last) {
+	alert(`Your baby's name is ${firstNames[first] + lastNames[last]}!`);
+}
+
+
+nameGen(first, last);
+
+function trueRand(){
+	let partOne = Math.floor(Math.random() * 100);
+	let partTwo = Math.floor(Math.random() * 100);
+	console.log(`Your baby's name is ${firstNames[partOne] + lastNames[partTwo]}!`);
+}
+
+trueRand();
+
+</script>
+</body>
+</html>
