@@ -21,19 +21,27 @@ let firstNames = ["", "Kar", "Jax", "Cay", "Ky", "Pai", "Fox", "Tin", "Har", "Cy
 let lastNames = ["", "lee", "xton", "leigh", "lyn", "ux", "dan", "son", "xon", "erly", "err", "ley", "gan", "zlee", "sen", "lynn", "den", "sper", "yn", "dee", "lo", "ker", "syn", "erleigh", "ber", "lea", "via", "man", "kon", "kynn", "di", " Lou", "ella", "der", "lor", "ington", "xxon", "ser", "ryn", "iel", "ron", "rie", "ston", "cyn", "de", "ver", "la", "vander", "nix", "lyse", "wyn", "see", "way", "is", "dry", "ro", "cer", "ory", "rayne", "al", "bry", "ali", "kee", "ling", "low", "styn", "dlee", "dox", "bree", "ora", "dell", "lina", "zer", "von", "beth", "cin", "anna", "row", "ter", "alee", "zten", "ayah", "sun", "zah", "dynn", "zer", "tlee", "zynne", "nar", "ameigh", "lea", "ryk", "thor", " Rae", "zin", "land", "ler", "bella", "tynne", "ier"];
 const firstContainer = document.querySelector('#container');
 const secondContainer = document.querySelector('#alsocontainer');
-//asks the user to input two numbers seperated by a space. the space is there so when i convert the value to a string, i can split it with a space using the split function. then i can get the values of the array without worrying about any jankyness in the array itself (it'll take two and three digit numbers without a problem). next i call the function with a reset button added once the function is called so the name can go away if the user wants to pick another number or two. the function itself only concats two random strings from the above arrays, with the empty strings in there so the user can start from 1 and not 0.
+//asks the user to input two numbers seperated by a space. the space is there so when i convert the value to a string, i can split it with a space using the split function. then i can get the values of the array without worrying about any jankyness in the array itself (it'll take two and three digit numbers without a problem). next i call the function with a reset button added once the function is called so the name can go away if the user wants to pick another number or two. the function itself only concats two random strings from the above arrays, with the empty strings in there so the user can start from 1 and not 0. 
+
+//after having some people who aren't my friends look over it (but who were totally sweet about the whole thing and liked what i made), i added some user cases that'll let you like...not enter just an empty string or whateer as your second number. it isn't perfect, in fact if you enter some strings as part of what you enter i think you can still fuck it up entirely, but for the problem i was given (that if you enter an empty string as the first or second paramater it gives you undefiend), it works.
 firstForm.addEventListener('keydown', function (e) {
 	 if (e.keyCode === 13){
 	 	let submission = (firstForm.value).toString();
 	 	let numbers = submission.split(" ");
 	 	let first = numbers[0];
 	 	let second = numbers[1];
-	 	function nameGen(first, second) {
+	 	if (first == ''){
+	 		alert('You have to enter two numbers!');
+	 	}else if (second == undefined || second ==''){
+	 		alert('You have to enter two numbers!');
+	 	}else{
+			function nameGen(first, second) {
 			const newName = document.createElement('div');
 			newName.textContent = (`Your baby's name is ${firstNames[first] + lastNames[second]} !`);
 			newName.setAttribute('style', 'padding: 20px');
 			firstContainer.appendChild(newName);
-		} nameGen(first, second);
+		} nameGen(first, second); 
+		}
 	 } 
 	 
 });
